@@ -259,18 +259,61 @@ All requests require an `api_key` query parameter:
   `POST https://appapi.bots.business/v1/bots/123/commands?api_key=YOUR_API_KEY`  
   ```json
   {
-    "command": "/start"
+  "command": "/help2",
+  "aliases": "help, ❤ Help",
+  "answer": "Hellow world",
+  "group": "-1001390263766, -1001390263756",
+  "help": null,
+  "keyboard_body": "Contact, Reach out \n Support",
+  "commands_folder_id": 6805501,
+  "auto_retry_time": "",
+  "bjs_code": "",
+  "need_reply": true
   }
   ```
-- **Example Request** (In Folder):  
-  `POST https://appapi.bots.business/v1/bots/123/commands?api_key=YOUR_API_KEY`  
-  ```json
-  {
-    "command": "/admin",
-    "commands_folder_id": 202
-  }
-  ```
-- **Example Response**: Created command object.
+
+  **Response:**
+```json
+{
+    "id": 65752277,
+    "command": "/help2",
+    "bot_id": 2646009,
+    "help": null,
+    "created_at": "2025-08-29T10:01:53.106Z",
+    "updated_at": "2025-08-29T10:01:53.106Z",
+    "answer": "Hellow world",
+    "last_csv_import_at": null,
+    "created_via_csv_import": null,
+    "keyboard_body": "Contact, Reach out \n Support",
+    "bjs_mode": null,
+    "need_reply": true,
+    "auto_retry_time": null,
+    "last_auto_retry_at": null,
+    "commands_folder_id": 6805501,
+    "scenarios": [],
+    "aliases": [{
+        "id": 20636228,
+        "command": "help",
+        "bot_command_id": 65752277,
+        "created_at": "2025-08-29T10:01:53.675Z",
+        "updated_at": "2025-08-29T10:01:53.675Z"
+    }, {
+        "id": 20636229,
+        "command": "❤ help",
+        "bot_command_id": 65752277,
+        "created_at": "2025-08-29T10:01:53.745Z",
+        "updated_at": "2025-08-29T10:01:53.745Z"
+    }],
+    "commands_folder": {
+        "id": 6805501,
+        "title": "My folder",
+        "bot_id": 2646009,
+        "created_at": "2025-08-29T09:43:35.680Z",
+        "updated_at": "2025-08-29T09:43:35.680Z"
+    },
+    "code": ""
+}
+```
 
 #### GET /bots/:id/commands/:command_id
 - **Description**: Get details of a specific command (includes code, answer, etc.).
